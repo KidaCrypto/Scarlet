@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Scarlet",
+  "version": "1.0",
+  "description": "Your scorching wallet.",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.dexscreener.com/solana/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "permissions": [
+    "sidePanel", 
+    "storage", 
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  "icons": {
+    "16": "logo-kida.png",
+    "48": "logo-kida.png"
+  }
+}
